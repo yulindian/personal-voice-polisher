@@ -1,10 +1,12 @@
 # Personal Voice Polisher · 个人文风润色
 
-**版本 0.1.1 · 中文 Agent Skill · MIT**
+**版本 0.1.2 · 中文 Agent Skill · MIT**
 
 让 AI 从你的自然表达和过往文章中了解你，再把已有中文文案整理成更符合你习惯的版本。职业身份、发言场景和不愿公开／表达的边界分别记录，不靠头衔猜文风。
 
 适合希望把 AI 初稿、口述内容或已有文章整理成自己表达方式的人。每位使用者建立自己的档案，公开包不预装作者或其他人的个人文风。
+
+这里的个人风格主要指**这个人怎么说话**：常用词、有表达作用的口头禅或口头表达、称呼、语气和句子节奏。会过滤停顿、卡顿和无意义语气助词；不同话题可以继续补充样本。文章逻辑、业务流程、分段套路和“先原因再结果”等组织方式不沉淀为个人讲话特征，按当次内容处理。
 
 [下载 ZIP](https://github.com/yulindian/personal-voice-polisher/releases/latest) · [完整示例](examples/quickstart.md) · [更新记录](CHANGELOG.md) · [反馈问题](https://github.com/yulindian/personal-voice-polisher/issues)
 
@@ -22,7 +24,7 @@
 
 ### 不使用命令行：下载 ZIP
 
-1. 打开 [Releases](https://github.com/yulindian/personal-voice-polisher/releases/latest)，下载 `personal-voice-polisher-0.1.1.zip` 附件。
+1. 打开 [Releases](https://github.com/yulindian/personal-voice-polisher/releases/latest)，下载 `personal-voice-polisher-0.1.2.zip` 附件。
 2. 解压，得到 `personal-voice-polisher` 文件夹。
 3. 按下表将整个文件夹放入准备写作的项目，不要只复制 SKILL.md。
 4. 在该项目启动助手，使用对应调用方式。
@@ -95,11 +97,13 @@ Claude Code 使用 `/personal-voice-polisher` 代替示例中的 `$personal-voic
 
 ## 你会得到什么
 
-- 建档：身份与读者背景、个人边界、有原句依据的风格特征、适用场景、证据局限及一次试改。
+- 建档：有原句依据的讲话措辞、口头表达候选、语气与句子口语感，以及独立的身份背景、个人边界、适用范围和一次试改。
 - 润色：默认一版完整稿；需要时再给前后对照或修改说明。
 - 反馈：明确长期要求直接更新，单篇要求只处理当前文章；普通接受不会被当成新的本人原创证据。
 
 访谈一次问一个具体问题。你说“先这样”，就结束当前访谈并保留已有档案；后续有新文章或修改时再继续。暂时未想到的边界可以补充；一段试改获接受，不会扩大成所有文章都已认可。
+
+例如“我觉得、比较、不太、比如说”有具体表达作用时可以作为候选；“嗯、呃”、卡顿和重复起头不会被复制成个人特色。不会把所有“就是／其实／的话／嘛／吧”一律删除，而是根据本句作用处理。没有足够证据时会说明尚未识别到稳定口头禅，不为了凑风格给你贴标签。
 
 职业、组织角色和社会身份是可选背景。负责人可以用普通使用者口吻，老师也可以用同行交流口吻；读者关系影响语气，不意味着固定“身份腔”。不会要求收入或社会地位排名，也不会自动在文中公开身份。
 
@@ -133,7 +137,7 @@ python -X utf8 -B -m unittest discover -s tests -p test_check_package.py -v
 python -X utf8 -B scripts/build_release.py .
 ```
 
-产物位于 `outputs/personal-voice-polisher-0.1.1.zip`。白名单脚本只打包列明的公共文件，不执行上传；相同输入生成相同 ZIP。维护说明见 [CONTRIBUTING](CONTRIBUTING.md)。
+产物位于 `outputs/personal-voice-polisher-0.1.2.zip`。白名单脚本只打包列明的公共文件，不执行上传；相同输入生成相同 ZIP。维护说明见 [CONTRIBUTING](CONTRIBUTING.md)。
 
 ## 常见问题与边界
 

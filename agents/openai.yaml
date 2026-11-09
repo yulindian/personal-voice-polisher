@@ -1,4 +1,4 @@
 interface:
   display_name: "个人文风润色"
-  short_description: "从自然表达和过往文章建立个人文风，按身份场景与个人边界润色中文"
+  short_description: "沉淀个人常用措辞、口头表达与语气，过滤转写噪声，按个人边界润色中文"
   default_prompt: "请用 $personal-voice-polisher，根据我的表达样本建立个人文风档案，并按我的边界润色文案。"
