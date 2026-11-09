@@ -1,0 +1,29 @@
+name: Validate skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.14']
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check skill files
+        run: python -X utf8 -B scripts/check_package.py .
+      - name: Test validation and private-data exclusion
+        run: python -X utf8 -B -m unittest discover -s tests -p "test_*.py" -v
+      - name: Build public-only archive
+        run: python -X utf8 -B scripts/build_release.py .

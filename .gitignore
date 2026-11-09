@@ -1,0 +1,8 @@
+# Private runtime material and reproducible delivery files.
+.voice-polisher/
+.tmp/
+outputs/
+__pycache__/
+*.pyc
+.venv/
+.env
